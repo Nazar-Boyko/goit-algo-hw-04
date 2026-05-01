@@ -9,20 +9,20 @@ def total_salary(path):
                 line = line.strip()
                 
                 if not line:
-                    continue  # пропускаємо пусті рядки
+                    continue
 
                 parts = line.split(',')
 
                 if len(parts) != 2:
-                    continue  # пошкоджений рядок
+                    continue
 
                 name, salary = parts
 
                 try:
-                    total += int(salary)
+                    total += float(salary)
                     count += 1
                 except ValueError:
-                    continue  # якщо зарплата не число
+                    continue  
 
         if count == 0:
             return (0, 0)

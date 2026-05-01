@@ -3,7 +3,7 @@
 def get_cats_info(path) -> dict:
 
     try:
-        cats = {}
+        cats = []
         count = 0
         with open(path, 'r') as file:
 
@@ -18,11 +18,11 @@ def get_cats_info(path) -> dict:
                     continue
                     
                 id_, name,age = parts
-                cats[count] = {
+                cats.append({
                     "id": id_,
                     "name":name,
                     "age" : age,
-                    }
+                    })
 
                 count += 1
         
@@ -40,6 +40,6 @@ def get_cats_info(path) -> dict:
         return {} # переробити
 
             
-cats_info = get_cats_info("HM_4/text.txt")
+cats_info = get_cats_info("text.txt")
 
 print(cats_info)
