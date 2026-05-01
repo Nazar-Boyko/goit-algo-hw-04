@@ -34,11 +34,10 @@ def get_cats_info(path) -> dict:
 
     except FileNotFoundError:
         print("Помилка: файл не знайдено")
-        return {} # переробити
+        return []
     except Exception as e:
         print(f"Помилка при обробці файлу: {e}")
-        return {} # переробити
-
+        return [] 
             
 cats_info = get_cats_info("text.txt")
 
